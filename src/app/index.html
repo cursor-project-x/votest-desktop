@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="app.css" />
+</head>
+<body ng-app="votestApp">
+  <div class="container" ng-controller="pageController as vm">
+    <form class="form form-view" ng-submit="vm.viewPoll()">
+      <div class="field">
+        <label class="field_label" for="pin">Poll PIN:</label>
+        <input class="field_input" type="text" id="pin" placeholder="11-22-33" />
+      </div>
+      <button class="button" type="submit">View</button>
+    </form>
+  </div>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-aria.js"></script>
+
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "name": "votest-desktop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron src/main.js",
+    "package": "electron-packager src/ VotestApp --asar --platform=darwin --arch=x64 --out build/ --app-version 0.0.1 --overwrite",
+    "build1": "electron-builder build --macos",
+    "build2": "electron-builder build --macos --prepackaged build/VotestApp-darwin-x64"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cursor-project-x/votest-desktop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cursor-project-x/votest-desktop/issues"
+  },
+  "homepage": "https://github.com/cursor-project-x/votest-desktop#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "electron": "^1.7.9",
+    "electron-builder": "^19.49.0",
+    "electron-packager": "^10.1.0",
+    "electron-prebuilt": "^1.4.13"
+  }
+}
