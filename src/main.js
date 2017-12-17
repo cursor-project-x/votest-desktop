@@ -1,7 +1,8 @@
 const electron = require('electron')
-const {app, BrowserWindow} = electron
 const path = require('path')
 const url = require('url')
+
+const {app, BrowserWindow} = electron
 
 let mainWindow
 
@@ -23,6 +24,9 @@ app.once('ready', () => {
     show: false,
     title: "Votest App",
     // icon: "",
+    webPreferences: {
+      nodeIntegration: false
+    }
   })
 
   mainWindow.loadURL(url.format({

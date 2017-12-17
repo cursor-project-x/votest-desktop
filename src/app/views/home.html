@@ -1,0 +1,11 @@
+<div ng-controller="HomeController as home">
+  <form class="form form-view" ng-submit="home.viewPoll()">
+    <div class="field">
+      <label class="field_label" for="pin">Poll PIN:</label>
+      <input class="field_input" type="text" id="pin" placeholder="11-22-33"
+             ng-model="home.pin" />
+      <div class="field_error" ng-show="home.error">{{ home.error }}</div>
+    </div>
+    <button class="button" type="submit">View</button>
+  </form>
+</div>
