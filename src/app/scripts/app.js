@@ -1,16 +1,15 @@
-const app = angular.module('votestApp', ['ngRoute']);
+angular.module('votestApp', ['ngRoute']);
 
-app.config(function($routeProvider) {
-  $routeProvider
-    .when('/', {
-      templateUrl: 'views/home.html',
-      controller: 'HomeController'
-    })
-    .when('/poll/:pin', {
-      templateUrl: 'views/poll.html',
-      controller: 'PollController'
-    })
-    .otherwise({
-      redirectTo: '/'
-    });
-});
+angular.module('votestApp')
+  .config(($routeProvider) => {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'views/home.html',
+      })
+      .when('/poll/:pin', {
+        templateUrl: 'views/poll.html',
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  });

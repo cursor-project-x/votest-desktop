@@ -1,18 +1,26 @@
-app.controller('HomeController', function($location) {
-  var vm = this;
+angular.module('votestApp')
+  .controller('HomeController', function($scope, $location, ApiService) {
+    $scope.viewPoll = () => {
+      const pin = $scope.pin;
 
-  vm.page = 'homepage';
+      $scope.error = ''
 
-  vm.viewPoll = () => {
-    const pin = vm.pin;
+      if (!/^\d{2}\-\d{2}\-\d{2}$/.test(pin)) {
+        $scope.error = 'PIN format is not correct.'
+        return
+      }
 
-    vm.error = ''
+      $scope.loading = true;
 
-    if (!/^\d{2}\-\d{2}\-\d{2}$/.test(pin)) {
-      vm.error = 'PIN format is not correct.'
-      return
+      ApiService.getPoll(pin).then((data) => {
+        if (!data.poll) {
+          $scope.loading = false;
+          $scope.error = 'Poll not found.'
+          $scope.$apply()
+          return
+        }
+
+        $location.path(`/poll/${pin}`);
+      });
     }
-
-    $location.path(`/poll/${pin}`);
-  }
-});
+  });

@@ -3,10 +3,10 @@
 <head>
   <title></title>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="app.css?1" />
+  <link rel="stylesheet" type="text/css" href="styles/app.css" />
 </head>
 <body ng-app="votestApp">
-  <div class="container" ng-controller="PageController as page">
+  <div class="container" ng-controller="PageController">
     <ng-view></ng-view>
   </div>
 
@@ -18,11 +18,12 @@
 
   <script type="text/javascript" src="config.js"></script>
   <script type="text/javascript" src="scripts/app.js"></script>
+  <script type="text/javascript" src="scripts/service/ApiService.js"></script>
+  <script type="text/javascript" src="scripts/service/ApiWsService.js"></script>
   <script type="text/javascript" src="scripts/directives/voPreloader.js"></script>
   <script type="text/javascript" src="scripts/directives/voChart.js"></script>
   <script type="text/javascript" src="scripts/controllers/PageController.js"></script>
   <script type="text/javascript" src="scripts/controllers/HomeController.js"></script>
   <script type="text/javascript" src="scripts/controllers/PollController.js"></script>
-
 </body>
 </html>
